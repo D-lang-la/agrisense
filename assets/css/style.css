@@ -1,0 +1,189 @@
+/* =========================================================
+   AGRISENSE - ESTILOS PRINCIPALES
+   ========================================================= */
+
+:root {
+    --verde-principal: #2E7D32;
+    --verde-claro: #66BB6A;
+    --azul: #2196F3;
+    --blanco: #FFFFFF;
+    --gris-fondo: #F4F8F4;
+    --gris-texto: #4A5A4A;
+    --sombra: 0 4px 20px rgba(46, 125, 50, 0.10);
+    --radio: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gris-fondo);
+    color: #263826;
+    margin: 0;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Utilidades de marca ---------- */
+.text-agrisense-verde { color: var(--verde-principal); }
+.bg-agrisense-verde { background-color: var(--verde-principal); }
+.btn-agrisense {
+    background: linear-gradient(135deg, var(--verde-principal), var(--verde-claro));
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    font-weight: 600;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-agrisense:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46,125,50,.3);
+    color: var(--blanco);
+}
+.btn-agrisense-azul {
+    background: linear-gradient(135deg, var(--azul), #64B5F6);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    font-weight: 600;
+}
+.btn-agrisense-azul:hover { color: var(--blanco); opacity: .92; }
+
+/* ---------- Logo ---------- */
+.logo-img { height: 46px; width: auto; }
+.logo-img-lg { height: 100px; width: auto; }
+.brand-text {
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: var(--verde-principal);
+}
+
+/* ---------- Páginas de autenticación (login / registro) ---------- */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, #E8F5E9, #F4F8F4 60%);
+    padding: 24px;
+}
+.auth-card {
+    background: var(--blanco);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+}
+.auth-card .form-control {
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #DCEBDC;
+}
+.auth-card .form-control:focus {
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 .2rem rgba(102,187,106,.25);
+}
+.auth-footer-link { color: var(--verde-principal); font-weight: 600; }
+
+/* ---------- Layout con sidebar ---------- */
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--verde-principal), #1B5E20);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    padding: 22px 16px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+.sidebar .logo-box { display: flex; align-items: center; gap: 10px; margin-bottom: 30px; padding: 0 6px; }
+.sidebar .logo-box img { height: 42px; background: var(--blanco); border-radius: 50%; padding: 3px; }
+.sidebar .logo-box span { font-weight: 700; font-size: 1.15rem; }
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,.85);
+    padding: 11px 14px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    font-size: .95rem;
+    font-weight: 500;
+    transition: background .15s ease;
+}
+.sidebar nav a:hover { background: rgba(255,255,255,.12); color: var(--blanco); }
+.sidebar nav a.active { background: rgba(255,255,255,.22); color: var(--blanco); }
+.sidebar .logout-link { margin-top: auto; }
+
+.main-content { flex: 1; padding: 26px 32px; max-width: 100%; }
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.topbar h1 { font-size: 1.5rem; font-weight: 700; margin: 0; color: #1B5E20; }
+.topbar .fecha-hora { color: var(--gris-texto); font-size: .9rem; }
+
+/* ---------- Tarjetas del dashboard ---------- */
+.card-agrisense {
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    border: none;
+    padding: 22px;
+    height: 100%;
+}
+.metric-card { text-align: center; }
+.metric-card .icon-circle {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 1.5rem;
+    color: var(--blanco);
+}
+.metric-card .valor { font-size: 1.9rem; font-weight: 700; color: #1B5E20; }
+.metric-card .etiqueta { color: var(--gris-texto); font-size: .85rem; text-transform: uppercase; letter-spacing: .5px; }
+
+.icon-temp { background: linear-gradient(135deg,#FF7043,#FFAB91); }
+.icon-air { background: linear-gradient(135deg, var(--azul), #90CAF9); }
+.icon-soil { background: linear-gradient(135deg,#8D6E63,#BCAAA4); }
+
+.badge-estado {
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: .85rem;
+    display: inline-block;
+}
+.badge-optimo   { background: #E8F5E9; color: #2E7D32; }
+.badge-atencion { background: #FFF8E1; color: #F9A825; }
+.badge-critico  { background: #FFEBEE; color: #C62828; }
+
+#recomendaciones-lista li { margin-bottom: 6px; }
+
+/* ---------- Tablas ---------- */
+.table-agrisense thead { background: var(--verde-principal); color: var(--blanco); }
+.table-agrisense th, .table-agrisense td { vertical-align: middle; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .app-shell { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: relative; flex-direction: row; overflow-x: auto; }
+    .sidebar .logo-box { margin-bottom: 0; }
+    .sidebar nav { display: flex; }
+    .sidebar .logout-link { margin-top: 0; }
+    .main-content { padding: 18px; }
+}
